@@ -1,0 +1,70 @@
+/* Global styles */
+body {
+    background-color: #FCEBB6;
+    color: #221811;
+    font-family: Tahoma, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Wrapper for centered layout */
+#wrapper {
+    width: 80%;
+    background-color: #FEFAEB;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header styling */
+header {
+    background-color: #D2B48C;
+    color: #8C3826;
+    text-align: center;
+    padding: 20px;
+    font-size: 1.5em;
+}
+
+/* Headings */
+h1 {
+    line-height: 200%;
+}
+
+h2 {
+    color: #8C3826;
+}
+
+/* Navigation styling */
+nav {
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #221811;
+    margin: 0 15px;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid #221811;
+}
+
+td, th {
+    border: 2px solid #221811;
+    padding: 8px;
+    text-align: left;
+}
+
+/* Footer styling */
+footer {
+    background-color: #D2B48C;
+    font-size: 0.60em;
+    font-style: italic;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
