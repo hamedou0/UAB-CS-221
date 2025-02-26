@@ -1,0 +1,56 @@
+/* Reset all elements to have 0 margin and padding, and use border-box */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header styling - sticky at top, centered text, bottom border */
+header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: #f8e9a1; /* Light yellow like in the example */
+    color: #333;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 50px;
+}
+
+/* Main content styling - 80% width and centered */
+main {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #fff;
+    color: #333;
+    min-height: calc(100vh - 100px);
+}
+
+/* Container for main content */
+.content-container {
+    background-color: #b5d99c; /* Light green  */
+    margin: 0;
+}
+
+/* Style for paragraphs in main */
+main p {
+    margin: 0; /* Remove margin between paragraphs */
+    padding: 1em; /* Keep the 1em padding as required */
+    background-color: transparent; /* Make background transparent so container color shows */
+}
+
+/* Footer styling - fixed at bottom, centered text, full width */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #a8d8eb; /* Light blue */
+    color: #333;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Paragraph styling - 1em padding on all sides */
+p {
+    padding: 1em;
+}
