@@ -1,0 +1,174 @@
+/* Base styles and reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+/* Header styles */
+header {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Main content area */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Product grid using CSS Grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 10.2px;
+    margin-bottom: 2rem;
+}
+
+/* Product card styles */
+.product-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Product badge styles */
+.product-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    color: white;
+}
+
+.product-badge.sale {
+    background-color: #e74c3c;
+}
+
+.product-badge.out-of-stock {
+    background-color: #7f8c8d;
+}
+
+/* Product content styles */
+.product-name {
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+}
+
+.product-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #7f8c8d;
+    font-weight: normal;
+    margin-right: 0.5rem;
+}
+
+.product-description {
+    color: #7f8c8d;
+    flex-grow: 1;
+    margin-bottom: 1rem;
+}
+
+/* Button styles */
+.add-to-cart {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 0.8rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.add-to-cart:hover {
+    background-color: #2980b9;
+}
+
+.add-to-cart:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+}
+
+/* Out of stock product styles */
+.out-of-stock .product-name,
+.out-of-stock .product-price,
+.out-of-stock .product-description {
+    opacity: 0.6;
+}
+
+/* Footer styles */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* Responsive styles */
+/* Desktop (default): 3-4 cards per row */
+/* Already handled by the grid template columns */
+
+/* Tablet: 2 cards per row */
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    header {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Mobile: 1 card per row */
+@media (max-width: 480px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .product-card {
+        padding: 1rem;
+    }
+
+    .add-to-cart {
+        padding: 0.6rem 0.8rem;
+    }
+}
