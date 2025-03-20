@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    padding: 15px;
+    z-index: 1;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    gap: 20px;
+    justify-content: center;
+}
+
+div {
+    height: 300px;
+    width: 300px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+div:nth-child(1) {
+    background-image: url('images/m3.jpg');
+}
+
+div:nth-child(2) {
+    background-image: url('images/m2.jpg');
+}
+
+div:nth-child(3) {
+    background-image: url('images/m5.jpg');
+}
+
+div:nth-child(4) {
+    background-image: url('images/m6.jpg');
+}
+
+div:nth-child(5) {
+    background-image: url('images/m8.jpg');
+}
+
+div:nth-child(6) {
+    background-image: url('images/x6.jpg');
+}
+
+div:nth-child(2n) {
+    border-style: dashed;
+}
+
+div:hover {
+    width: 310px;
+    height: 310px;
+}
+
+div:not(:nth-child(3)):hover {
+    width: 310px;
+    height: 310px;
+}
+
+div:nth-child(3):hover {
+    width: 300px;
+    height: 300px;
+}
+
+div::before {
+    content: attr(data-caption);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    z-index: 2;
+}
+
+div:hover::before {
+    opacity: 1;
+}
+
+div::after {
+    content: "🔍";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -12px;
+    margin-left: -12px;
+    font-size: 24px;
+    opacity: 0;
+    z-index: 3;
+}
+
+div:hover::after {
+    opacity: 1;
+}
+
+@media (max-width: 980px) {
+    main {
+        grid-template-columns: repeat(2, 300px);
+    }
+}
+
+@media (max-width: 650px) {
+    main {
+        grid-template-columns: 300px;
+    }
+}
