@@ -64,20 +64,14 @@ div:nth-child(2n) {
     border-style: dashed;
 }
 
+
+
+
 div:hover {
-    width: 310px;
-    height: 310px;
-}
-
-div:not(:nth-child(3)):hover {
-    width: 310px;
-    height: 310px;
-}
-
-div:nth-child(3):hover {
     width: 300px;
     height: 300px;
 }
+
 
 div::before {
     content: attr(data-caption);
