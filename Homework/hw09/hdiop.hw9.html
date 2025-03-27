@@ -14,13 +14,13 @@
 <h1>Number Checker</h1>
 
 <script>
-  // using prompt since the assignment specifically asks for it
+  //
   // better than making our own input form
   let input = prompt("enter a number to check if it's even or odd:");
 
   // need to  handle when someone hits cancel or esc
   if (input === null) {
-    console.log("user canceled the prompt");
+    console.log("user prompt cancelled");
   } else {
     // need to convert the input to a number since prompt gives us a string
     // number() is better than parseint since it handles decimals too
@@ -28,11 +28,11 @@
 
     // need to make sure it's actually a number
     // like if someone entered text instead of a number
-    if (isNaN(num)) {
+    if (isNaN(num)) { //we went over Nan ofter this assignemnt was due i think, but i turned this in late, not 00% sure if we went over it alr
       console.log("not a valid number");
     } else {
-      // this is the actual check - if you can divide by 2 with no remainder, it's even
-      // the % (modulo) operator gives the remainder after division
+      // this is the actual check , if you can divide by 2 with no remainder, it's even
+      // the %  operator gives the remainder after division
       if (num % 2 === 0) {
         console.log(num + " is even");
       } else {
