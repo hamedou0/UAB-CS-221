@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Number Checker</title>
+  <style>
+    body {
+      background-color: #000000;
+      color: lightgrey;
+      font-family: sans-serif;
+    }
+  </style>
+</head>
+<body>
+<h1>Number Checker</h1>
+
+<script>
+  // using prompt since the assignment specifically asks for it
+  // better than making our own input form
+  let input = prompt("enter a number to check if it's even or odd:");
+
+  // need to  handle when someone hits cancel or esc
+  if (input === null) {
+    console.log("user canceled the prompt");
+  } else {
+    // need to convert the input to a number since prompt gives us a string
+    // number() is better than parseint since it handles decimals too
+    let num = Number(input);
+
+    // need to make sure it's actually a number
+    // like if someone entered text instead of a number
+    if (isNaN(num)) {
+      console.log("not a valid number");
+    } else {
+      // this is the actual check - if you can divide by 2 with no remainder, it's even
+      // the % (modulo) operator gives the remainder after division
+      if (num % 2 === 0) {
+        console.log(num + " is even");
+      } else {
+        // if it's not even, it must be odd
+        console.log(num + " is odd");
+      }
+    }
+  }
+</script>
+</script>
+</body>
+</html>
