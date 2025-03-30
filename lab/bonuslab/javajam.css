@@ -1,0 +1,287 @@
+
+  /* design thought process
+    so for this redesign i wanted to keep the original colors but make everything
+    look more modern   the old site was kinda dated looking and had weird spacing
+
+    design choices:
+    - kept the color palette (#FCEBB6 #D2B48C #8C3826 #221811 #FEFAEB) because brand identity
+    - added a wrapper with max width and centered it for better readability on big screens
+    - made the navigation bar more prominent with the burgundy color
+    - added some subtle shadows and rounded corners to look more current
+    - used white backgrounds for menu items and job listings to make them pop
+    - made everything responsive with some basic media queries
+      mobile nav switches to stacked instead of horizontal
+
+    i tried not to go too crazy with fancy stuff  just wanted it to look clean and modern
+    while still feeling like a cozy coffee shop website
+  */
+
+/* base stuff */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FCEBB6;
+    color: #221811;
+    font-family: Verdana, Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* main container */
+#wrapper {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #FEFAEB;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* heading styles */
+h1 {
+    color: #8C3826;
+    font-size: 2rem;
+    margin: 15px 0;
+}
+
+h2 {
+    color: #8C3826;
+    font-size: 1.5rem;
+    margin: 15px 0;
+    border-bottom: 2px solid #D2B48C;
+    padding-bottom: 5px;
+}
+
+h3 {
+    color: #8C3826;
+    font-size: 1.2rem;
+    margin: 15px 0;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+/* header area */
+header {
+    background-color: #D2B48C;
+    padding: 20px;
+    text-align: center;
+}
+
+/* navigation */
+nav {
+    background-color: #8C3826;
+    padding: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav li {
+    margin: 0;
+}
+
+nav a {
+    color: #FEFAEB;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: block;
+    font-weight: bold;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* main content */
+main {
+    padding: 20px;
+}
+
+/* images */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 15px;
+}
+
+/* lists */
+ul {
+    margin: 15px 0;
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* address box */
+.address {
+    background-color: #D2B48C;
+    padding: 15px;
+    margin: 20px 0;
+}
+
+/* menu styles */
+.menu-item {
+    background-color: white;
+    margin-bottom: 20px;
+    padding: 15px;
+}
+
+.menu-item dt {
+    font-weight: bold;
+    color: #8C3826;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.menu-item dd {
+    margin-bottom: 15px;
+    padding-left: 10px;
+}
+
+/* tables for music page */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th {
+    background-color: #D2B48C;
+    color: #8C3826;
+    text-align: left;
+    padding: 12px;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #D2B48C;
+}
+
+tr:nth-child(even) {
+    background-color: #FAF6E9;
+}
+
+/* job listings */
+.job-section {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.wage {
+    color: #8C3826;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* forms */
+form {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #D2B48C;
+    font-family: inherit;
+}
+
+button {
+    background-color: #8C3826;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #6d2c1e;
+}
+
+/* footer */
+footer {
+    background-color: #D2B48C;
+    color: #221811;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.8rem;
+}
+
+footer a {
+    color: #8C3826;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* responsive stuff */
+@media screen and (max-width: 768px) {
+    #wrapper {
+        width: 95%;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    /* stack the nav on small screens */
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav a {
+        text-align: center;
+    }
+
+    /* make tables scrollable */
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+}
+
+/* tiny screens */
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+}
