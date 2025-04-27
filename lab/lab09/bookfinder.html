@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookExplorer</title>
+    <link rel="stylesheet" href=bookfinder.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<header>
+    <h1>BookExplorer</h1>
+</header>
+
+<main>
+    <section class="query-area">
+        <div class="input-wrapper">
+            <input type="text" id="query-field" placeholder="Enter title, author or ISBN...">
+            <button id="find-btn">Find Books</button>
+        </div>
+        <div id="alert-box"></div>
+    </section>
+
+    <div class="nav-tabs">
+        <button class="nav-item selected" data-tab="results-area">Search Results</button>
+        <button class="nav-item" data-tab="shelf-area">My Collection</button>
+    </div>
+
+    <section id="results-area" class="panel-content selected">
+        <div id="found-count"></div>
+        <div id="results-grid" class="book-grid">
+        </div>
+        <div id="wait-indicator" class="loader">
+            <div class="circle-spin"></div>
+        </div>
+    </section>
+
+    <section id="shelf-area" class="panel-content">
+        <h2>My Collection</h2>
+        <div id="shelf-grid" class="book-grid">
+        </div>
+        <div id="empty-shelf" class="notice">
+            <p>You haven't added any books yet. Find some books and add them to your collection!</p>
+        </div>
+    </section>
+</main>
+
+<div id="detail-popup" class="popup">
+    <div class="popup-body">
+        <span class="close-btn">&times;</span>
+        <div id="popup-content"></div>
+    </div>
+</div>
+
+<footer>
+    <p>Data from OpenLibrary API</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
